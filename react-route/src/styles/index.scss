@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import 'reset';
+
+.page-container {
+  @apply mx-auto max-w-[1280px] py-4 flex flex-col items-center justify-center gap-5
+}
+
+// Active nav
+.nav-header.active {
+  @apply text-green-500 font-bold
+}

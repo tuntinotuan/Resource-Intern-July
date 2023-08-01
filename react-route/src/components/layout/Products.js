@@ -18,16 +18,15 @@ const listNavProducts = [
 
 const Products = () => {
   return (
-    <div>
-      {listNavProducts &&
-        listNavProducts.map((item) => (
-          <NavLink
-            to={item.url}
-            className={({ isActive }) => (isActive ? "text-green-500" : "")}
-          >
-            {item.title}
-          </NavLink>
-        ))}
+    <div className="page-container">
+      <div className="flex items-center justify-center gap-4 w-[500px] shadow-md p-4 mx-auto">
+        {listNavProducts &&
+          listNavProducts.map((item) => (
+            <NavLink to={item.url} className="nav-header" key={item.title}>
+              {item.title}
+            </NavLink>
+          ))}
+      </div>
       <Outlet></Outlet>
     </div>
   );

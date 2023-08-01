@@ -7,6 +7,8 @@ import Search from "./components/search/Search";
 import AddProduct from "./components/product/AddProduct";
 import ListProducts from "./components/product/ListProducts";
 import ProductDisplay from "./components/product/ProductDisplay";
+import RelativeLinksPage from "./pages/RelativeLinksPage";
+import BlockingFormPage from "./pages/BlockingFormPage";
 
 function App() {
   return (
@@ -21,6 +23,11 @@ function App() {
             <Route path="add" element={<AddProduct />} />
             <Route path=":id" element={<ProductDisplay />} />
           </Route>
+          <Route
+            path="/relative-links/:id"
+            element={<RelativeLinksPage />}
+          ></Route>
+          <Route path="/blocking-form" element={<BlockingFormPage />}></Route>
         </Route>
       </Routes>
     </div>

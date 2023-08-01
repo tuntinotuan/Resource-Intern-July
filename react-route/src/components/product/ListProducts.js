@@ -11,6 +11,7 @@ const ListProducts = () => {
           <div
             key={index}
             onClick={() => navigate(`/products/${index}`)}
+            className="cursor-pointer border border-gray-200 p-5 rounded-md"
           >{`Product ${index}`}</div>
         ))}
     </Fragment>
