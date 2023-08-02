@@ -1,19 +1,20 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
-import "./styles/index.scss";
+import { createRoot } from "react-dom/client";
+import { Provider } from "react-redux";
+// import { store } from './app/store';
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { BrowserRouter } from "react-router-dom";
-import { LocationProvider } from "./components/location-context";
+import "./index.scss";
+import store from "./redux-toolkit/configureStore";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
+const container = document.getElementById("root");
+const root = createRoot(container);
+
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <LocationProvider>
-        <App />
-      </LocationProvider>
-    </BrowserRouter>
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>
 );
 

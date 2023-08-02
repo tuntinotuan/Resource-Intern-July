@@ -12,11 +12,11 @@ const RelativeLinksPage = () => {
   return (
     <div className="page-container">
       {exampleRelativeLinks &&
-        exampleRelativeLinks.map((items) => (
+        exampleRelativeLinks.map((items, index) => (
           <Link
             to={items.to}
             relative={items.relative}
-            key={items.to}
+            key={index}
             className="border border-gray-200 p-4 rounded-md hover:bg-gray-50 transition-all"
           >{`<Link to="${items.to}" ${
             items.relative ? `relative="${items.relative}"` : ""

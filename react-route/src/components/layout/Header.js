@@ -38,7 +38,7 @@ const Header = () => {
                 : ""
             }`}
             key={item.title}
-            // preventScrollReset={true}
+            preventScrollReset={true}
           >
             {item.title}
           </NavLink>
