@@ -3,7 +3,8 @@ import { createSlice } from "@reduxjs/toolkit";
 const globalSlide = createSlice({
   name: "global",
   initialState: {
-    showSidebar: true,
+    showSidebar: false,
+    darkmode: false,
   },
   reducers: {
     toggleSidebar: (state, { payload }) => {
@@ -12,8 +13,14 @@ const globalSlide = createSlice({
         showSidebar: payload,
       };
     },
+    toggleDarkmode: (state, { payload }) => {
+      return {
+        ...state,
+        darkmode: payload,
+      };
+    },
   },
 });
 
-export const { toggleSidebar } = globalSlide.actions;
+export const { toggleSidebar, toggleDarkmode } = globalSlide.actions;
 export default globalSlide.reducer;

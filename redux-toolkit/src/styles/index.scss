@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import 'reset';
+
+@layer base {
+  body {
+    @apply dark:bg-darkMain;
+    line-height: 1.5;
+    font-size: 16px;
+  }
+}
+
+.hidden-input {
+  @apply hidden
+}
