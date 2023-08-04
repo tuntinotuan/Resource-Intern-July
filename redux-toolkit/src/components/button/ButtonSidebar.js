@@ -11,7 +11,7 @@ const ButtonSidebar = () => {
   };
   return (
     <div
-      className="fixed top-[10px] right-[10px] flex items-center justify-center bg-white dark:bg-gray-800 dark:text-white rounded-md shadow-sm cursor-pointer p-2"
+      className="flex items-center justify-center bg-white dark:bg-gray-800 dark:text-white rounded-md shadow-sm cursor-pointer p-2"
       onClick={handleShowSidebar}
     >
       <IconMenu></IconMenu>

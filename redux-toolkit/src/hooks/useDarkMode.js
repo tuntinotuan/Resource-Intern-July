@@ -1,11 +1,12 @@
 import { useEffect } from "react";
-import useLocalStorage from "./useLocalStorage";
+import useLocalStorageDarkMode from "./useLocalStorageDarkMode";
 import useMedia from "./useMedia";
 
 export default function useDarkMode() {
-  // Use our useLocalStorage hook to persist state through a page refresh.
-  // Read the recipe for this hook to learn more: usehooks.com/useLocalStorage
-  const [enabledState, setEnabledState] = useLocalStorage("dark-mode-enabled");
+  // Use our useLocalStorageDarkMode hook to persist state through a page refresh.
+  // Read the recipe for this hook to learn more: usehooks.com/useLocalStorageDarkMode
+  const [enabledState, setEnabledState] =
+    useLocalStorageDarkMode("dark-mode-enabled");
   // See if user has set a browser or OS preference for dark mode.
   // The usePrefersDarkMode hook composes a useMedia hook (see code below).
   const prefersDarkMode = usePrefersDarkMode();
