@@ -1,11 +1,16 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { debounce } from "lodash";
+// import {
+//   getNews,
+//   otherAction,
+//   setQuery,
+// } from "../../redux-toolkit/news/newsSlice";
 import {
-  getNews,
-  otherAction,
+  handleFetchNews,
+  setLoading,
   setQuery,
-} from "../../redux-toolkit/news/newsSlice";
+} from "../../redux-thunk/newsSlice";
 
 const News = () => {
   const { news, loading, errorMessage, query } = useSelector(
@@ -13,13 +18,18 @@ const News = () => {
   );
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getNews(query));
+    dispatch(handleFetchNews(query));
   }, [dispatch, query]);
+  // useEffect(() => {
+  //   dispatch(getNews(query));
+  // }, [dispatch, query]);
   const handleChangeQuery = debounce((e) => {
     dispatch(setQuery(e.target.value));
+    // dispatch(setQuery(e.target.value));
   }, 500);
   const controlLoadingWithExtraReducers = () => {
-    dispatch(otherAction(!loading));
+    dispatch(setLoading(!loading));
+    // dispatch(otherAction(!loading));
   };
   return (
     <div className="w-2/4 p-5 mx-auto mt-5 mb-5 bg-white dark:bg-gray-800 rounded-lg shadow-md">

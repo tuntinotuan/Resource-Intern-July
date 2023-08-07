@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import { RouterPrompt } from "../components/RouterPrompt";
 import { useLocationContext } from "../components/location-context";
 
@@ -10,6 +10,17 @@ const BlockingFormPage = () => {
   //   "Hello from usePrompt -- Are you sure you want to leave?",
   //   isBlocking
   // );
+  const [preventClose, setPreventClose] = useState(false);
+  if (preventClose) {
+    window.onbeforeunload = (event) => {
+      event.preventDefault();
+      return "";
+    };
+  } else {
+    window.onbeforeunload = (event) => {
+      event.stopPropagation();
+    };
+  }
   return (
     <Fragment>
       <RouterPrompt title="Form is not submitting"></RouterPrompt>
@@ -37,6 +48,7 @@ const BlockingFormPage = () => {
         <p>
           <button>Submit to stop blocking</button>
         </p>
+        <button onClick={() => setPreventClose(!preventClose)}>Demo</button>
       </form>
     </Fragment>
   );

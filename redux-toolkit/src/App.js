@@ -81,8 +81,8 @@ function App() {
       <Sidebar></Sidebar>
       <MenuSticky></MenuSticky>
       <ToggleDarkmode></ToggleDarkmode>
-      <ListCake></ListCake>
       <ToggleDarkmode></ToggleDarkmode>
+      <ListCake></ListCake>
       <News></News>
       {/* <h1>{`The count from App is: ${count}`}</h1>
       <Counter></Counter> */}

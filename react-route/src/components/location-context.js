@@ -10,15 +10,27 @@ function LocationProvider(props) {
   const [currentPath, setCurrentPath] = useState("");
   const [showPrompt, setShowPrompt] = useState(false);
   const [nextPath, setNextPath] = useState("");
-  console.log("when, currentPath||", when, currentPath, nextPath);
+  // console.log("when, currentPath||", when, currentPath, nextPath);
+  const classListNav = Array.from(
+    document.getElementsByClassName("nav-header")
+  );
   useEffect(() => {
+    function handleClickNav(e) {
+      e.preventDefault();
+    }
     if (when && currentPath !== "/blocking-form") {
+      classListNav.forEach((nav) =>
+        nav.addEventListener("click", handleClickNav)
+      );
+      navigate("/blocking-form");
       setNextPath(currentPath);
       handleShowModal();
     }
+    classListNav.forEach((nav) =>
+      nav.removeEventListener("click", handleClickNav)
+    );
     setCurrentPath(location.pathname);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [location]);
+  }, [location, classListNav, currentPath, navigate, when]);
   function handleShowModal() {
     setShowPrompt(true);
   }
@@ -42,7 +54,7 @@ function LocationProvider(props) {
     handleConfirm,
     handleShowModal,
   };
-  console.log("LocalPath", currentPath);
+  // console.log("LocalPath", currentPath);
   return (
     <LocationContext.Provider value={values}>
       {props.children}

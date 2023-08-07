@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 const ListCake = () => {
   const { cakeList } = useSelector((state) => state.cakes);
   return (
-    <div className="max-w-[1024px] mx-auto flex items-center justify-around gap-10 my-5">
+    <div className="max-w-[1024px] mx-auto grid grid-cols-3 gap-10 my-5">
       {cakeList &&
         cakeList.length > 0 &&
         cakeList.map((items) => (

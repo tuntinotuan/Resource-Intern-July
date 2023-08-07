@@ -20,13 +20,13 @@ const globalSlide = createSlice({
         darkmode: payload,
       };
     },
-    toggleCart: (state, action) => ({
+    toggleShowCart: (state, action) => ({
       ...state,
       showCart: action.payload,
     }),
   },
 });
 
-export const { toggleSidebar, toggleDarkmode, toggleCart } =
+export const { toggleSidebar, toggleDarkmode, toggleShowCart } =
   globalSlide.actions;
 export default globalSlide.reducer;

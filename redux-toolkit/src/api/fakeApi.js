@@ -3,7 +3,7 @@ export const cakeData = [
     id: 1,
     url: "https://cdn.dribbble.com/users/2400293/screenshots/18733513/media/808ca1b009efd4781844b7e716e13edb.png?resize=768x576&vertical=center",
     title: "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
-    favorites: true,
+    favorites: false,
   },
   {
     id: 2,
@@ -14,6 +14,12 @@ export const cakeData = [
   {
     id: 3,
     url: "https://cdn.dribbble.com/users/2400293/screenshots/16378193/media/e9ad5ebe9dd6822be9ee622c7465d9e5.png?resize=768x576&vertical=center",
+    title: "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+    favorites: false,
+  },
+  {
+    id: 4,
+    url: "https://cdn.dribbble.com/users/2400293/screenshots/16527147/media/f079dc5596a5fb770016c4ea506cd77b.png?resize=768x576&vertical=center",
     title: "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
     favorites: false,
   },
