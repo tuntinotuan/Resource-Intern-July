@@ -4,27 +4,28 @@
   "info": {
     "singularName": "video-list",
     "pluralName": "video-lists",
-    "displayName": "Video List"
+    "displayName": "Video List",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "Chapter": {
+    "chapter": {
       "type": "string"
-    },
-    "videos": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::video.video",
-      "mappedBy": "video_list"
     },
     "course": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::course.course",
       "inversedBy": "video_lists"
+    },
+    "videos": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::video.video",
+      "mappedBy": "video_lists"
     }
   }
 }

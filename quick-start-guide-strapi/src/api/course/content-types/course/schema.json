@@ -48,6 +48,12 @@
       "relation": "oneToMany",
       "target": "api::video-list.video-list",
       "mappedBy": "course"
+    },
+    "reviews": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::review.review",
+      "mappedBy": "courses"
     }
   }
 }
